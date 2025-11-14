@@ -185,8 +185,10 @@ cat data8.bin  # or final ASCII file
 
 ```bash
 ssh -p 2220 bandit13@bandit.labs.overthewire.org
+ls
+scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
 chmod 600 sshkey.private
-ssh -i sshkey.private -p 2220 bandit14@localhost
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
 cat /etc/bandit_pass/bandit14
 ```
 
