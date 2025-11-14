@@ -184,16 +184,29 @@ cat data8.bin  # or final ASCII file
 **Goal:** use private SSH key for `bandit14`.
 
 ```bash
+# Step 1: SSH into bandit13
 ssh -p 2220 bandit13@bandit.labs.overthewire.org
-ls
-exit
-scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
-chmod 600 sshkey.private
-ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
-cat /etc/bandit_pass/bandit14
-```
 
-**Password:** `MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS`
+# Step 2: Check that the private key exists
+ls
+
+# Step 3: Exit bandit13
+exit
+
+# Step 4: Copy the private key to your local machine
+scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
+
+# Step 5: Fix the permissions of the private key
+chmod 600 sshkey.private
+
+# Step 6: Use the private key to SSH into bandit14
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+
+# Step 7: Read the password for bandit14
+cat /etc/bandit_pass/bandit14
+
+
+
 
 ---
 
