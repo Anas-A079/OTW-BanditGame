@@ -204,7 +204,7 @@ ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
 
 # Step 7: Read the password for bandit14
 cat /etc/bandit_pass/bandit14
-
+```
 
 
 
